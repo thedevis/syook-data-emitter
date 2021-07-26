@@ -28,7 +28,7 @@ if (false && cluster.isMaster) {
       randomMessageCount,
       dataSource
     );
-    console.log(_messagePacket);
+    console.log("data packet generated");
   }, 1000 * parseInt(config.app.EMITTER_SERVICE_INTERVAL));
 
   io.on("connection", (socket) => {
