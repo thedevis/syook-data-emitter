@@ -18,6 +18,7 @@ class EmitterService extends EventEmitter{
       messageQueue.push(encryptMessage.content);
     }
     let message = messageQueue.join('|');
+    this.emit("data",message);
     return message
   }
 }

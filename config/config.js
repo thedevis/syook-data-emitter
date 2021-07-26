@@ -6,6 +6,7 @@ const config={
         IV:process.env.IV,
         MESSAGE_MIN_COUNT:process.env.MESSAGE_MIN_COUNT,
         MESSAGE_MAX_COUNT:process.env.MESSAGE_MAX_COUNT,
+        EMITTER_SERVICE_INTERVAL:process.env.EMITTER_SERVICE_INTERVAL
     }
 
 }
