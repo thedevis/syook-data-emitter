@@ -1,0 +1,28 @@
+{
+  "name": "syook-data-emitter",
+  "version": "1.0.0",
+  "description": "generating data and allow other services to connect through socket",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thedevis/syook-data-emitter.git"
+  },
+  "keywords": [
+    "syook",
+    "data-emitter",
+    "socket",
+    "stream"
+  ],
+  "author": "Praveen Kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thedevis/syook-data-emitter/issues"
+  },
+  "homepage": "https://github.com/thedevis/syook-data-emitter#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0"
+  }
+}
