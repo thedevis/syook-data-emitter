@@ -29,9 +29,7 @@ if (false && cluster.isMaster) {
       dataSource
     );
     console.log(
-      `Generated ${randomMessageCount} encrypted messages.....${
-        totalPacket + randomMessageCount
-      }`
+      `Generated ${randomMessageCount} encrypted messages.....${randomMessageCount}`
     );
   }, 1000 * parseInt(config.app.EMITTER_SERVICE_INTERVAL));
 

@@ -105,3 +105,11 @@ dist
 
 #package.json
 package-lock.json
+
+.prettierrc
+
+.prettierrc.json
+
+.vscode
+
+.eslintrc.js
