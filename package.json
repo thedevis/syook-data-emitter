@@ -4,7 +4,8 @@
   "description": "generating data and allow other services to connect through socket",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node app.js"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,11 @@
   },
   "homepage": "https://github.com/thedevis/syook-data-emitter#readme",
   "dependencies": {
-    "dotenv": "^10.0.0"
+    "dotenv": "^10.0.0",
+    "socket-io": "^1.0.0",
+    "socket.io": "^4.1.3"
+  },
+  "engines": {
+    "node": "10.x"
   }
 }

@@ -1,8 +1,6 @@
-const path = require("path");
-require("dotenv").config({ path: path.resolve(__dirname, ".env") });
-const config = require("./config/config");
 const cluster = require("cluster");
 const os = require("os");
+const dataSource = require("./data.json");
 if (cluster.isMaster) {
   for (var i = 0; i < os.cpus().length; i++) {
     cluster.fork();
@@ -11,8 +9,10 @@ if (cluster.isMaster) {
     cluster.fork();
   });
 } else {
+  const path = require("path");
+  require("dotenv").config({ path: path.resolve(__dirname, ".env") });
+  const config = require("./config/config");
   const { EmitterService } = require("./services/EmitterService");
-  const dataSource = require("./data.json");
   const http = require("http").createServer();
   const io = require("socket.io")(http);
   let emitterServiceObj = new EmitterService();
@@ -28,6 +28,7 @@ if (cluster.isMaster) {
       randomMessageCount,
       dataSource
     );
+    console.log(_messagePacket);
   }, 1000 * parseInt(config.app.EMITTER_SERVICE_INTERVAL));
 
   io.on("connection", (socket) => {
