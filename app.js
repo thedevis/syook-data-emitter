@@ -28,20 +28,23 @@ if (false && cluster.isMaster) {
       randomMessageCount,
       dataSource
     );
-    console.log("data packet generated");
+    console.log(
+      `Generated ${randomMessageCount} encrypted messages.....${
+        totalPacket + randomMessageCount
+      }`
+    );
   }, 1000 * parseInt(config.app.EMITTER_SERVICE_INTERVAL));
 
-  io.on("connection", (socket) => {
-    console.log(`New client connected`);
-    emitterServiceObj.on("data", (data) => {
-      console.log(`Sending data to client....`);
-      socket.emit("message", data);
-    });
-  });
   io.on("exit", () => {
     console.log("client disconnected");
   });
-
+  io.on("connection", (socket) => {
+    console.log(`New client connected`);
+    emitterServiceObj.on("data", (data) => {
+      //console.log(`Sending data to client....`);
+      socket.emit("message", data);
+    });
+  });
   http.listen(parseInt(config.app.EMITTER_SERVICE_PORT), () => {
     console.log("Server Is Running Port: " + config.app.EMITTER_SERVICE_PORT);
   });
