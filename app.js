@@ -1,7 +1,7 @@
 const cluster = require("cluster");
 const os = require("os");
 const dataSource = require("./data.json");
-if (cluster.isMaster) {
+if (false && cluster.isMaster) {
   for (var i = 0; i < os.cpus().length; i++) {
     cluster.fork();
   }
